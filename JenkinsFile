@@ -6,7 +6,7 @@ pipeline {
         FRONTEND_BUILD_DIR = 'build' // 假设你的前端构建产物在项目根目录下的 'build' 文件夹
         NGINX_FRONTEND_PATH = '/usr/share/nginx/html/your-frontend-app' // Nginx 托管前端的目录
     }
-
+  
     stages {
         stage('Checkout Frontend Code') {
             steps {
