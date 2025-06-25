@@ -6,14 +6,11 @@
 
     <!-- 页面头部 -->
     <header class="home-header">
-
       <div class="user-nickname">
         👋 欢迎，{{ nickname }}
       </div>
-
       <!-- 退出登录按钮 -->
       <button class="logout-btn" @click="logout">退出登录</button>
-
       <h1 class="neon-text">🎥 欢迎来到电影网站</h1>
       <p class="subtitle">浏览最新的电影与排期，尽情享受观影体验。</p>
       <div class="btn-group">
@@ -64,7 +61,7 @@ export default {
           poster: "/images/3.jpg"
         }
       ],
-      nickname: ''
+      nickname: '',
     };
   },
   mounted() {
@@ -74,6 +71,22 @@ export default {
     } else {
       this.nickname = '游客';
     }
+
+    // 添加外部脚本
+    const script = document.createElement('script');
+    script.src = 'http://192.168.79.100/embed.min.js';
+    script.id = 'PraxRzSiJ3c2Epyx';
+    script.defer = true;
+    document.body.appendChild(script);
+
+    window.difyChatbotConfig = {
+      token: 'PraxRzSiJ3c2Epyx',
+      baseUrl: 'http://192.168.79.100',
+      systemVariables: {
+        // user_id: 'YOU CAN DEFINE USER ID HERE',
+        // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+      },
+    };
   },
   methods: {
     logout() {
@@ -115,7 +128,7 @@ export default {
         animationDelay: delay,
         animationDuration: duration,
       };
-    }
+    },
   }
 };
 </script>
@@ -351,5 +364,14 @@ export default {
   font-size: 1rem;
   color: rgba(255,255,255,0.7);
   line-height: 1.3;
+}
+
+/* AI聊天浮动按钮 */
+#dify-chatbot-bubble-button {
+  background-color: #1C64F2 !important;
+}
+#dify-chatbot-bubble-window {
+  width: 24rem !important;
+  height: 40rem !important;
 }
 </style>
